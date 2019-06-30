@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/whatgarbage/static/js/runtime~main.4dc16f21.js"
   },
   {
-    "revision": "9b78d75a1e6d66c09050",
-    "url": "/whatgarbage/static/js/main.9b78d75a.chunk.js"
+    "revision": "4cf749cb6c4dc8a8db91",
+    "url": "/whatgarbage/static/js/main.4cf749cb.chunk.js"
   },
   {
     "revision": "d996fe9740d9684532d8",
     "url": "/whatgarbage/static/js/1.d996fe97.chunk.js"
   },
   {
-    "revision": "9b78d75a1e6d66c09050",
+    "revision": "4cf749cb6c4dc8a8db91",
     "url": "/whatgarbage/static/css/main.1764a15c.chunk.css"
   },
   {
-    "revision": "90593389dd621290cbc58488fc386f38",
+    "revision": "27634a07538d3e2a27aa16468449d041",
     "url": "/whatgarbage/index.html"
   }
 ];
