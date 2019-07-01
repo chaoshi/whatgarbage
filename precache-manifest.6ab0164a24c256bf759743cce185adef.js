@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/whatgarbage/static/css/main.8e33c9c5.chunk.css"
   },
   {
-    "revision": "4a25057c9dfc38dc1192ce34098ffae8",
+    "revision": "4d584b6d35b6fb9de025c1f5ae6aa481",
     "url": "/whatgarbage/index.html"
   }
 ];
