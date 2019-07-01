@@ -5,6 +5,8 @@ import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 import "./styles.css";
 
+import { labels } from './labels.js'
+
 class App extends React.Component {
   videoRef = React.createRef();
   canvasRef = React.createRef();
@@ -59,13 +61,14 @@ class App extends React.Component {
       const y = prediction.bbox[1];
       const width = prediction.bbox[2];
       const height = prediction.bbox[3];
+      const label = labels[prediction.class].translation + ": " + labels[prediction.class].label;
       // Draw the bounding box.
       ctx.strokeStyle = "#00FFFF";
       ctx.lineWidth = 4;
       ctx.strokeRect(x, y, width, height);
       // Draw the label background.
       ctx.fillStyle = "#00FFFF";
-      const textWidth = ctx.measureText(prediction.class).width;
+      const textWidth = ctx.measureText(label).width;
       const textHeight = parseInt(font, 10); // base 10
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
     });
@@ -73,9 +76,10 @@ class App extends React.Component {
     predictions.forEach(prediction => {
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
+      const label = labels[prediction.class].translation + ": " + labels[prediction.class].label;
       // Draw the text last to ensure it's on top.
       ctx.fillStyle = "#000000";
-      ctx.fillText(prediction.class, x, y);
+      ctx.fillText(label, x, y);
     });
   };
 
@@ -83,19 +87,21 @@ class App extends React.Component {
     return (
       <div>
         <video
+          id="my-video"
           className="size"
           autoPlay
           playsInline
           muted
           ref={this.videoRef}
-          width="600"
-          height="500"
+          width="360"
+          height="740"
         />
         <canvas
+          id="my-canvas"
           className="size"
           ref={this.canvasRef}
-          width="600"
-          height="500"
+          width="360"
+          height="740"
         />
       </div>
     );
